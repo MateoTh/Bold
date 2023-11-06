@@ -20,10 +20,14 @@ class ProviderCard extends ChangeNotifier {
   }
 
   void revealCard(GamePhase phase) {
-    if (_placedCards.isNotEmpty &&
-        !_revealedCards.contains(_placedCards.last)) {
-      _revealedCards.add(_placedCards.last);
-      if (_placedCards.length > 1) _placedCards.removeLast();
+    if (_placedCards.length == 1) return;
+    if (_placedCards.isNotEmpty) {
+      if (_revealedCards.isEmpty) {
+        _revealedCards.add(_placedCards.last);
+      } else {
+        _placedCards.removeLast();
+        _revealedCards.add(_placedCards.last);
+      }
     }
     notifyListeners();
   }
