@@ -15,49 +15,55 @@ class Board extends StatelessWidget {
     final placedCards = context.watch<ProviderCard>().placedCards;
     final actualGamePhase = context.watch<ProviderGame>().gamePhase;
 
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          GestureDetector(
-            onPanUpdate: (details) {
-              if (details.delta.dy < 0) {
-                context.read<ProviderGame>().setGamePhase(GamePhase.build);
-              }
-              if (details.delta.dy > 0) {
-                context.read<ProviderGame>().setGamePhase(GamePhase.bet);
-              }
-            },
-            onTap: () {
-              if (actualGamePhase == GamePhase.build) return;
-              context.read<ProviderGame>().setGamePhase(GamePhase.reveal);
-              context.read<ProviderCard>().revealCard(actualGamePhase);
-            },
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                // for (int i = 0; i < placedCards!.length; i++)
-                //   Padding(
-                //     padding: EdgeInsets.only(top: i * 32),
-                //     child: GamingCardUi(
-                //       size: MediaQuery.of(context).size.width * 0.8 + i * 16,
-                //       card: placedCards[i],
-                //     ),
-                //   ),
-                for (int i = 0; i < placedCards!.length; i++)
-                  PlayingCard(
-                    size: MediaQuery.of(context).size.width * 0.8,
-                    card: placedCards[i],
-                    cardIllustration:
-                        _cardIllustration(context, placedCards[i]),
-                  ),
-              ],
+    return Padding(
+      padding: EdgeInsets.only(
+          right: (placedCards!.isNotEmpty
+                  ? placedCards.length - 1
+                  : placedCards.length) *
+              8,
+          bottom: (placedCards.isNotEmpty
+                  ? placedCards.length - 1
+                  : placedCards.length) *
+              8),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onPanUpdate: (details) {
+                if (details.delta.dy < 0) {
+                  context.read<ProviderGame>().setGamePhase(GamePhase.build);
+                }
+                if (details.delta.dy > 0) {
+                  context.read<ProviderGame>().setGamePhase(GamePhase.bet);
+                }
+              },
+              onTap: () {
+                if (actualGamePhase == GamePhase.build) return;
+                context.read<ProviderGame>().setGamePhase(GamePhase.reveal);
+                context.read<ProviderCard>().revealCard(actualGamePhase);
+              },
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  for (int i = 0; i < placedCards.length; i++)
+                    Padding(
+                      padding: EdgeInsets.only(top: i * 16, left: i * 16),
+                      child: PlayingCard(
+                        size: MediaQuery.of(context).size.width * 0.8,
+                        card: placedCards[i],
+                        cardIllustration:
+                            _cardIllustration(context, placedCards[i]),
+                      ),
+                    ),
+                ],
+              ),
             ),
-          ),
-          // SizedBox(
-          //   height: placedCards.length * 32,
-          // )
-        ],
+            const SizedBox(
+              height: 32,
+            )
+          ],
+        ),
       ),
     );
   }

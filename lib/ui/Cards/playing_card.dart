@@ -18,25 +18,19 @@ class PlayingCard extends StatelessWidget {
       width: size,
       height: size,
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.white, width: 0.5),
-          borderRadius: BorderRadius.circular(8),
-          image: DecorationImage(
-            image: cardIllustration,
-          )),
+        border: Border.all(color: Colors.white, width: 0.5),
+        borderRadius: BorderRadius.circular(8),
+        image: DecorationImage(
+          image: cardIllustration,
+        ),
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Colors.white.withOpacity(0.2),
+        //     blurRadius: 4,
+        //     offset: const Offset(4, 4),
+        //   ),
+        // ],
+      ),
     );
   }
-
-  // AssetImage _cardIllustration(BuildContext context) {
-  //   switch (context.watch<ProviderGame>().gamePhase) {
-  //     case GamePhase.bet:
-  //       return const AssetImage("assets/neutral_flower.png");
-  //     case GamePhase.build || GamePhase.reveal:
-  //       switch (card.type) {
-  //         case CardType.flower:
-  //           return const AssetImage("assets/red_flower.png");
-  //         case CardType.gun:
-  //           return const AssetImage("assets/red_gun.png");
-  //       }
-  //   }
-  // }
 }
