@@ -35,8 +35,7 @@ class GameScaffold extends StatelessWidget {
           },
           child: GamingCardUi(
               size: MediaQuery.of(context).size.width * 0.8,
-              card: context.watch<ProviderSelectedCard>().selectedCard ??
-                  cards[0]),
+              card: context.watch<ProviderCard>().selectedCard ?? cards[0]),
         )),
         bottomNavigationBar: Consumer<ProviderGame>(
           builder: (context, providerGame, child) {

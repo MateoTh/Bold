@@ -19,30 +19,19 @@ class GameCardSelection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: cards
-                    .map((card) => GestureDetector(
-                          onTap: () => {
-                            context
-                                .read<ProviderSelectedCard>()
-                                .setSelectedCard(card)
-                          },
-                          child: GamingCardSelectionUi(
-                              card: card,
-                              size: MediaQuery.of(context).size.width / 5),
-                        ))
-                    .toList()),
-            // ElevatedButton(
-            //     style: ElevatedButton.styleFrom(
-            //       minimumSize: const Size.fromHeight(32),
-            //     ),
-            //     onPressed: () => {
-            //           context.read<ProviderGame>().setGamePhase(GamePhase.bet),
-            //         },
-            //     child: const Icon(
-            //       Icons.check,
-            //       color: Colors.white,
-            //     ))
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: cards
+                  .map(
+                    (card) => GestureDetector(
+                      onTap: () =>
+                          {context.read<ProviderCard>().addNewCard(card)},
+                      child: GamingCardSelectionUi(
+                          card: card,
+                          size: MediaQuery.of(context).size.width / 5),
+                    ),
+                  )
+                  .toList(),
+            )
           ],
         ),
       ),

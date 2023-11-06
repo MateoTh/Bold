@@ -16,7 +16,7 @@ class GamingCardSelectionUi extends StatelessWidget {
     return Stack(
       children: [
         Card(
-            shape: card == context.watch<ProviderSelectedCard>().selectedCard
+            shape: card == context.watch<ProviderCard>().selectedCard
                 ? RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                     side: const BorderSide(color: Colors.white, width: 2.0),
@@ -24,11 +24,11 @@ class GamingCardSelectionUi extends StatelessWidget {
                 : null,
             child: GamingCardUi(card: card, size: size)),
         Visibility(
-          visible: card != context.watch<ProviderSelectedCard>().selectedCard &&
-              card.number != null,
+          visible: context.watch<ProviderCard>().placedCards?.contains(card) ??
+              false,
           child: Positioned(
-            bottom: 0,
-            left: 0,
+            bottom: 4,
+            left: 4,
             child: Container(
               padding: const EdgeInsets.all(2),
               decoration: const BoxDecoration(
@@ -38,7 +38,8 @@ class GamingCardSelectionUi extends StatelessWidget {
                     bottomLeft: Radius.circular(8)),
               ),
               child: Text(
-                card.number.toString(),
+                (context.watch<ProviderCard>().placedCards!.indexOf(card) + 1)
+                    .toString(),
                 style: const TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
