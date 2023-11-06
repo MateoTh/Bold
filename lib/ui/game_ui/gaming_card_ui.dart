@@ -16,6 +16,7 @@ class GamingCardUi extends StatelessWidget {
       width: size,
       height: size,
       decoration: BoxDecoration(
+          border: Border.all(color: Colors.white, width: 0.5),
           borderRadius: BorderRadius.circular(8),
           image: DecorationImage(
             image: _cardIllustration(context),

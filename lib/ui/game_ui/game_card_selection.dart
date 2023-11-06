@@ -13,27 +13,17 @@ class GameCardSelection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: SizedBox(
-        height: MediaQuery.of(context).size.width / 2,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: cards
-                  .map(
-                    (card) => GestureDetector(
-                      onTap: () =>
-                          {context.read<ProviderCard>().addNewCard(card)},
-                      child: GamingCardSelectionUi(
-                          card: card,
-                          size: MediaQuery.of(context).size.width / 5),
-                    ),
-                  )
-                  .toList(),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: cards
+            .map(
+              (card) => GestureDetector(
+                onTap: () => {context.read<ProviderCard>().addNewCard(card)},
+                child: GamingCardSelectionUi(
+                    card: card, size: MediaQuery.of(context).size.width / 5),
+              ),
             )
-          ],
-        ),
+            .toList(),
       ),
     );
   }
