@@ -29,7 +29,11 @@ class ProviderCard extends ChangeNotifier {
   }
 
   void revealCard(GamePhase phase) {
-    if (_placedCards.length == 1) return;
+    if (_placedCards.length == 1) {
+      if (_revealedCards.isNotEmpty) return;
+      _revealedCards.add(_placedCards.last);
+      return;
+    }
     if (_placedCards.isNotEmpty) {
       if (_revealedCards.isEmpty) {
         _revealedCards.add(_placedCards.last);

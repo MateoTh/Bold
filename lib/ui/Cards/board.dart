@@ -30,10 +30,13 @@ class Board extends StatelessWidget {
           children: [
             GestureDetector(
               onPanUpdate: (details) {
-                if (details.delta.dy < 0) {
+                if (details.delta.dy < 0 &&
+                    actualGamePhase != GamePhase.reveal) {
                   context.read<ProviderGame>().setGamePhase(GamePhase.build);
                 }
-                if (details.delta.dy > 0) {
+                if (details.delta.dy > 0 &&
+                    actualGamePhase != GamePhase.reveal &&
+                    placedCards.isNotEmpty) {
                   context.read<ProviderGame>().setGamePhase(GamePhase.bet);
                 }
               },
@@ -45,6 +48,15 @@ class Board extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
+                  PlayingCard(
+                    size: MediaQuery.of(context).size.width * 0.8,
+                    card: GameCard(type: CardType.flower),
+                    cardIllustration: _cardIllustration(
+                      context,
+                      GameCard(type: CardType.flower),
+                    ),
+                    filtre: true,
+                  ),
                   for (int i = 0; i < placedCards.length; i++)
                     Padding(
                       padding: EdgeInsets.only(top: i * 16, left: i * 16),

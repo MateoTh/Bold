@@ -1,6 +1,7 @@
 import 'package:bold/model/game.dart';
 import 'package:bold/provider/provider_card.dart';
 import 'package:bold/provider/provider_game_phase.dart';
+import 'package:bold/ui/Rules/rule_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,12 +22,10 @@ class _HeaderState extends State<Header> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          IconButton(
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.white,
-            ),
-            onPressed: () {
+          MenuButton(
+            icon: Icons.menu,
+            text: "",
+            ontap: () {
               setState(() {
                 display = !display;
               });
@@ -71,7 +70,11 @@ class _HeaderState extends State<Header> {
                     icon: Icons.menu_book,
                     text: "Rules",
                     ontap: () {
-                      print("Rules");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RuleScaffold()),
+                      );
                     },
                   ),
                   MenuButton(
