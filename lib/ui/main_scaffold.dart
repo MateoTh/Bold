@@ -1,4 +1,4 @@
-import 'package:bold/ui/game_ui/game_scaffold.dart';
+import 'package:bold/ui/game_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class MainScaffold extends StatelessWidget {

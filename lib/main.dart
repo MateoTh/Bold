@@ -1,6 +1,6 @@
 import 'package:bold/provider/provider_card.dart';
 import 'package:bold/provider/provider_game_phase.dart';
-import 'package:bold/ui/game_ui/game_scaffold.dart';
+import 'package:bold/ui/game_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

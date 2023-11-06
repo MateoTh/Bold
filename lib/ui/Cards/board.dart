@@ -2,13 +2,12 @@ import 'package:bold/model/card.dart';
 import 'package:bold/model/game.dart';
 import 'package:bold/provider/provider_card.dart';
 import 'package:bold/provider/provider_game_phase.dart';
-import 'package:bold/ui/game_ui/gaming_card_ui.dart';
+import 'package:bold/ui/Cards/playing_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class PlacedCards extends StatelessWidget {
-  const PlacedCards({super.key, required this.cards});
-
+class Board extends StatelessWidget {
+  const Board({super.key, required this.cards});
   final List<GameCard> cards;
 
   @override
@@ -46,9 +45,11 @@ class PlacedCards extends StatelessWidget {
                 //     ),
                 //   ),
                 for (int i = 0; i < placedCards!.length; i++)
-                  GamingCardUi(
+                  PlayingCard(
                     size: MediaQuery.of(context).size.width * 0.8,
                     card: placedCards[i],
+                    cardIllustration:
+                        _cardIllustration(context, placedCards[i]),
                   ),
               ],
             ),
@@ -59,5 +60,38 @@ class PlacedCards extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  AssetImage _cardIllustration(BuildContext context, GameCard card) {
+    List<GameCard>? revealed = context.watch<ProviderCard>().revealedCards;
+    switch (context.watch<ProviderGame>().gamePhase) {
+      case GamePhase.build:
+        if (card.type == CardType.flower) {
+          switch (card.type) {
+            case CardType.flower:
+              return const AssetImage("assets/red_flower.png");
+            case CardType.gun:
+              return const AssetImage("assets/red_gun.png");
+          }
+        }
+        switch (card.type) {
+          case CardType.flower:
+            return const AssetImage("assets/red_flower.png");
+          case CardType.gun:
+            return const AssetImage("assets/red_gun.png");
+        }
+      case GamePhase.bet:
+        return const AssetImage("assets/neutral_flower.png");
+      case GamePhase.reveal:
+        if (revealed!.contains(card)) {
+          switch (card.type) {
+            case CardType.flower:
+              return const AssetImage("assets/red_flower.png");
+            case CardType.gun:
+              return const AssetImage("assets/red_gun.png");
+          }
+        }
+        return const AssetImage("assets/neutral_flower.png");
+    }
   }
 }
