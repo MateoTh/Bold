@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Header extends StatefulWidget {
-  Header({super.key});
+  const Header({super.key});
 
-  bool display = false;
   @override
   State<Header> createState() => _HeaderState();
 }
 
 class _HeaderState extends State<Header> {
+  bool display = false;
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -28,18 +28,18 @@ class _HeaderState extends State<Header> {
             ),
             onPressed: () {
               setState(() {
-                widget.display = !widget.display;
+                display = !display;
               });
             },
           ),
           Visibility(
             maintainAnimation: true,
             maintainState: true,
-            visible: widget.display,
+            visible: display,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 300),
               curve: Curves.fastOutSlowIn,
-              opacity: widget.display ? 1 : 0,
+              opacity: display ? 1 : 0,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -57,14 +57,14 @@ class _HeaderState extends State<Header> {
                     icon: Icons.add,
                     text: "New Game",
                     ontap: () {
-                      print("New Game");
+                      context.read<ProviderCard>().resetGame();
                     },
                   ),
                   MenuButton(
-                    icon: Icons.delete,
+                    icon: Icons.close,
                     text: "Delete Card",
                     ontap: () {
-                      print("Delete Card");
+                      context.read<ProviderCard>().deleteCard();
                     },
                   ),
                   MenuButton(

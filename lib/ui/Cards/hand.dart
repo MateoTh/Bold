@@ -7,12 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Hand extends StatelessWidget {
-  const Hand({super.key, required this.cards});
-
-  final List<GameCard> cards;
+  const Hand({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final handCards = context.watch<ProviderCard>().handCards;
     return Positioned(
       bottom: 20,
       child: Consumer<ProviderGame>(
@@ -29,7 +28,7 @@ class Hand extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: cards
+                  children: handCards!
                       .map(
                         (card) => GestureDetector(
                             onTap: () =>

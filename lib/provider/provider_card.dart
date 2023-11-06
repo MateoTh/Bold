@@ -1,12 +1,21 @@
+import 'dart:math';
+
 import 'package:bold/model/card.dart';
 import 'package:bold/model/game.dart';
 import 'package:flutter/material.dart';
 
 class ProviderCard extends ChangeNotifier {
+  List<GameCard> _handCards = [
+    GameCard(type: CardType.flower),
+    GameCard(type: CardType.flower),
+    GameCard(type: CardType.flower),
+    GameCard(type: CardType.gun),
+  ];
   List<GameCard> _placedCards = [];
   List<GameCard> _revealedCards = [];
 
   GameCard? get selectedCard => _placedCards.lastOrNull;
+  List<GameCard>? get handCards => _handCards;
   List<GameCard>? get placedCards => _placedCards;
   List<GameCard>? get revealedCards => _revealedCards;
 
@@ -32,9 +41,26 @@ class ProviderCard extends ChangeNotifier {
     notifyListeners();
   }
 
+  void resetGame() {
+    _handCards = [
+      GameCard(type: CardType.flower),
+      GameCard(type: CardType.flower),
+      GameCard(type: CardType.flower),
+      GameCard(type: CardType.gun),
+    ];
+    resetCards();
+  }
+
   void resetCards() {
     _placedCards = [];
     _revealedCards = [];
+    notifyListeners();
+  }
+
+  void deleteCard() {
+    if (_handCards.isEmpty) return;
+    var card = _handCards[Random().nextInt(_handCards.length)];
+    _handCards.remove(card);
     notifyListeners();
   }
 }
