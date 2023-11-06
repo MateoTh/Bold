@@ -25,7 +25,7 @@ class GameScaffold extends StatelessWidget {
             const Revealed(),
             Board(cards: cards),
             Hand(cards: cards),
-            const Header()
+            Header()
           ],
         ),
       ),
