@@ -67,6 +67,13 @@ class _HeaderState extends State<Header> {
                     },
                   ),
                   MenuButton(
+                    icon: Icons.star,
+                    text: "Win Round",
+                    ontap: () {
+                      context.read<ProviderGame>().winRound();
+                    },
+                  ),
+                  MenuButton(
                     icon: Icons.menu_book,
                     text: "Rules",
                     ontap: () {

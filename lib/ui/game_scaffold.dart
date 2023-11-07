@@ -1,19 +1,31 @@
+import 'package:bold/provider/provider_game_phase.dart';
 import 'package:bold/ui/Cards/board.dart';
 import 'package:bold/ui/Cards/hand.dart';
 import 'package:bold/ui/Cards/revealed.dart';
 import 'package:bold/ui/header.dart';
+import 'package:bold/ui/victory_ui.dart';
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
 
 class GameScaffold extends StatelessWidget {
   const GameScaffold({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Stack(
           alignment: Alignment.center,
-          children: [const Revealed(), const Board(), const Hand(), Header()],
+          children: [
+            Visibility(
+                visible: context.watch<ProviderGame>().roundWon,
+                child: const VictoryUi()),
+            const Revealed(),
+            const Board(),
+            const Hand(),
+            const Header(),
+          ],
         ),
       ),
     );
