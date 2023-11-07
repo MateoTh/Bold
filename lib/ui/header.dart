@@ -84,11 +84,11 @@ class _HeaderState extends State<Header> {
                       );
                     },
                   ),
-                  MenuButton(
-                    icon: Icons.settings,
-                    text: "Settings",
-                    ontap: () {},
-                  ),
+                  // MenuButton(
+                  //   icon: Icons.settings,
+                  //   text: "Settings",
+                  //   ontap: () {},
+                  // ),
                 ],
               ),
             ),
