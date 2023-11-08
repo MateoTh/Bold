@@ -83,32 +83,40 @@ class Board extends StatelessWidget {
     List<GameCard>? revealed = context.watch<ProviderCard>().revealedCards;
     switch (context.watch<ProviderGame>().gamePhase) {
       case GamePhase.build:
-        if (card.type == CardType.flower) {
-          switch (card.type) {
-            case CardType.flower:
-              return const AssetImage("assets/red_flower.png");
-            case CardType.gun:
-              return const AssetImage("assets/red_gun.png");
-          }
-        }
         switch (card.type) {
           case CardType.flower:
-            return const AssetImage("assets/red_flower.png");
+            return AssetImage(context
+                .read<ProviderCard>()
+                .selectedPlayingCardTheme
+                .flowerAsset);
           case CardType.gun:
-            return const AssetImage("assets/red_gun.png");
+            return AssetImage(
+                context.read<ProviderCard>().selectedPlayingCardTheme.gunAsset);
         }
       case GamePhase.bet:
-        return const AssetImage("assets/neutral_flower.png");
+        return AssetImage(context
+            .read<ProviderCard>()
+            .selectedPlayingCardTheme
+            .neutralFlowerAsset);
       case GamePhase.reveal:
         if (revealed!.contains(card)) {
           switch (card.type) {
             case CardType.flower:
-              return const AssetImage("assets/red_flower.png");
+              return AssetImage(context
+                  .read<ProviderCard>()
+                  .selectedPlayingCardTheme
+                  .flowerAsset);
             case CardType.gun:
-              return const AssetImage("assets/red_gun.png");
+              return AssetImage(context
+                  .read<ProviderCard>()
+                  .selectedPlayingCardTheme
+                  .gunAsset);
           }
         }
-        return const AssetImage("assets/neutral_flower.png");
+        return AssetImage(context
+            .read<ProviderCard>()
+            .selectedPlayingCardTheme
+            .neutralFlowerAsset);
     }
   }
 }

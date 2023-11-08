@@ -1,5 +1,7 @@
+import 'package:bold/provider/provider_card.dart';
 import 'package:bold/ui/Rules/rule_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Step4 extends StatelessWidget {
   const Step4({super.key});
@@ -10,7 +12,12 @@ class Step4 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          image(context, "assets/neutral_flower.png"),
+          image(
+              context,
+              context
+                  .read<ProviderCard>()
+                  .selectedPlayingCardTheme
+                  .neutralFlowerAsset),
           const SizedBox(height: 8),
           rulesText(context, "*The most beautiful player starts"),
           rulesText(context,

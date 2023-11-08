@@ -47,9 +47,11 @@ class Revealed extends StatelessWidget {
   AssetImage _cardIllustration(BuildContext context, GameCard card) {
     switch (card.type) {
       case CardType.flower:
-        return const AssetImage("assets/red_flower.png");
+        return AssetImage(
+            context.read<ProviderCard>().selectedPlayingCardTheme.flowerAsset);
       case CardType.gun:
-        return const AssetImage("assets/red_gun.png");
+        return AssetImage(
+            context.read<ProviderCard>().selectedPlayingCardTheme.gunAsset);
     }
   }
 }

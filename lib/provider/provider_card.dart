@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:bold/model/card.dart';
+import 'package:bold/model/cardTheme.dart';
 import 'package:bold/model/game.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +15,14 @@ class ProviderCard extends ChangeNotifier {
   List<GameCard> _placedCards = [];
   List<GameCard> _revealedCards = [];
 
+  PlayingCardTheme _selectedPLayingCardTheme = PlayingCardThemes[0];
+
   GameCard? get selectedCard => _placedCards.lastOrNull;
   List<GameCard>? get handCards => _handCards;
   List<GameCard>? get placedCards => _placedCards;
   List<GameCard>? get revealedCards => _revealedCards;
+
+  PlayingCardTheme get selectedPlayingCardTheme => _selectedPLayingCardTheme;
 
   void addNewCard(GameCard card) {
     if (!_placedCards.contains(card)) {
@@ -65,6 +70,11 @@ class ProviderCard extends ChangeNotifier {
     if (_handCards.isEmpty) return;
     var card = _handCards[Random().nextInt(_handCards.length)];
     _handCards.remove(card);
+    notifyListeners();
+  }
+
+  void setPlayingCardTheme(PlayingCardTheme theme) {
+    _selectedPLayingCardTheme = theme;
     notifyListeners();
   }
 }

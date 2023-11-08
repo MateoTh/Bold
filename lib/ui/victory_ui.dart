@@ -1,11 +1,16 @@
+import 'package:bold/provider/provider_card.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+
+import 'package:provider/provider.dart';
 
 class VictoryUi extends StatelessWidget {
   const VictoryUi({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String imagePath =
+        context.read<ProviderCard>().selectedPlayingCardTheme.flowerAloneAsset;
     return Stack(
       children: [
         Positioned(
@@ -14,7 +19,7 @@ class VictoryUi extends StatelessWidget {
           child: Transform.rotate(
             angle: pi / 1.5,
             child: Image.asset(
-              "assets/red_flower_alone.png",
+              imagePath,
               width: MediaQuery.of(context).size.width * 0.3,
             ),
           ),
@@ -25,7 +30,7 @@ class VictoryUi extends StatelessWidget {
           child: Transform.rotate(
             angle: pi * 1.2,
             child: Image.asset(
-              "assets/red_flower_alone.png",
+              imagePath,
               width: MediaQuery.of(context).size.width * 0.3,
             ),
           ),
@@ -36,7 +41,7 @@ class VictoryUi extends StatelessWidget {
           child: Transform.rotate(
             angle: pi * 2.2,
             child: Image.asset(
-              "assets/red_flower_alone.png",
+              imagePath,
               width: MediaQuery.of(context).size.width * 0.3,
             ),
           ),
@@ -47,7 +52,7 @@ class VictoryUi extends StatelessWidget {
           child: Transform.rotate(
             angle: pi * 1.7,
             child: Image.asset(
-              "assets/red_flower_alone.png",
+              imagePath,
               width: MediaQuery.of(context).size.width * 0.3,
             ),
           ),

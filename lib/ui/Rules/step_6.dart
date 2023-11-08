@@ -1,5 +1,7 @@
+import 'package:bold/provider/provider_card.dart';
 import 'package:bold/ui/Rules/rule_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Step6 extends StatelessWidget {
   const Step6({super.key});
@@ -10,7 +12,8 @@ class Step6 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          image(context, "assets/red_gun.png"),
+          image(context,
+              context.read<ProviderCard>().selectedPlayingCardTheme.gunAsset),
           const SizedBox(height: 8),
           rulesText(context,
               "*After announcing his bet, the following players have only two choices:"),

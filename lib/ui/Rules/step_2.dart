@@ -1,5 +1,7 @@
+import 'package:bold/provider/provider_card.dart';
 import 'package:bold/ui/Rules/rule_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Step2 extends StatelessWidget {
   const Step2({super.key});
@@ -15,14 +17,24 @@ class Step2 extends StatelessWidget {
           children: [
             Column(
               children: [
-                image(context, "assets/red_flower.png",
+                image(
+                    context,
+                    context
+                        .read<ProviderCard>()
+                        .selectedPlayingCardTheme
+                        .flowerAsset,
                     size: MediaQuery.of(context).size.width * 0.4),
                 rulesText(context, "3 Flowers"),
               ],
             ),
             Column(
               children: [
-                image(context, "assets/red_gun.png",
+                image(
+                    context,
+                    context
+                        .read<ProviderCard>()
+                        .selectedPlayingCardTheme
+                        .gunAsset,
                     size: MediaQuery.of(context).size.width * 0.4),
                 rulesText(context, "1 Gun"),
               ],

@@ -2,6 +2,7 @@ import 'package:bold/model/game.dart';
 import 'package:bold/provider/provider_card.dart';
 import 'package:bold/provider/provider_game_phase.dart';
 import 'package:bold/ui/Rules/rule_scaffold.dart';
+import 'package:bold/ui/Settings/settings_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -84,11 +85,17 @@ class _HeaderState extends State<Header> {
                       );
                     },
                   ),
-                  // MenuButton(
-                  //   icon: Icons.settings,
-                  //   text: "Settings",
-                  //   ontap: () {},
-                  // ),
+                  MenuButton(
+                    icon: Icons.settings,
+                    text: "Settings",
+                    ontap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SettingsScaffold()),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
