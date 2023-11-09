@@ -42,7 +42,7 @@ class CardFlipWidgetState extends State<CardFlipWidget> {
       builder: (context, child) {
         final isUnder = (ValueKey(_isFrontVisible()) != child?.key);
         var tilt = ((animation.value - 0.5).abs() - 0.5) * 0.003;
-        tilt *= isUnder ? -1.0 : 1.0;
+        tilt *= _getTild(isUnder);
         final value =
             isUnder ? min(rotateAnim.value, pi / 2) : rotateAnim.value;
         return Transform(
@@ -101,5 +101,11 @@ class CardFlipWidgetState extends State<CardFlipWidget> {
         return AssetImage(
             context.read<ProviderCard>().selectedPlayingCardTheme.gunAsset);
     }
+  }
+
+  double _getTild(bool isUnder) {
+    GamePhase gamePhase = context.watch<ProviderGame>().gamePhase;
+    if (gamePhase == GamePhase.build) return isUnder ? 1.0 : -1.0;
+    return isUnder ? -1.0 : 1.0;
   }
 }
