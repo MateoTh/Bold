@@ -3,6 +3,7 @@ import 'package:bold/provider/provider_card.dart';
 import 'package:bold/provider/provider_game_phase.dart';
 import 'package:bold/ui/Rules/rule_scaffold.dart';
 import 'package:bold/ui/Settings/settings_scaffold.dart';
+import 'package:bold/ui/Shared%20Widgets/menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -45,33 +46,12 @@ class _HeaderState extends State<Header> {
                 children: [
                   MenuButton(
                     icon: Icons.refresh,
-                    text: "Reset",
+                    text: "New Game",
                     ontap: () {
                       context
                           .read<ProviderGame>()
                           .setGamePhase(GamePhase.build);
-                      context.read<ProviderCard>().resetCards();
-                    },
-                  ),
-                  MenuButton(
-                    icon: Icons.add,
-                    text: "New Game",
-                    ontap: () {
                       context.read<ProviderCard>().resetGame();
-                    },
-                  ),
-                  MenuButton(
-                    icon: Icons.close,
-                    text: "Delete Card",
-                    ontap: () {
-                      context.read<ProviderCard>().deleteCard();
-                    },
-                  ),
-                  MenuButton(
-                    icon: Icons.star,
-                    text: "Win Round",
-                    ontap: () {
-                      context.read<ProviderGame>().winRound();
                     },
                   ),
                   MenuButton(
@@ -101,33 +81,6 @@ class _HeaderState extends State<Header> {
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class MenuButton extends StatelessWidget {
-  const MenuButton(
-      {super.key, required this.text, required this.icon, required this.ontap});
-
-  final String text;
-  final IconData icon;
-  final Function ontap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => ontap(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4),
-        child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-          Text(
-            text,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(width: 8),
-          Icon(icon),
-        ]),
       ),
     );
   }

@@ -2,7 +2,8 @@ import 'package:bold/provider/provider_game_phase.dart';
 import 'package:bold/ui/Cards/board.dart';
 import 'package:bold/ui/Cards/hand.dart';
 import 'package:bold/ui/Cards/revealed.dart';
-import 'package:bold/ui/header.dart';
+import 'package:bold/ui/Shared%20Widgets/header.dart';
+import 'package:bold/ui/Shared%20Widgets/reset_button.dart';
 import 'package:bold/ui/victory_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class GameScaffold extends StatelessWidget {
             Visibility(
                 visible: context.watch<ProviderGame>().roundWon,
                 child: const VictoryUi()),
+            const ResetButton(),
             const Revealed(),
             const Board(),
             const Hand(),

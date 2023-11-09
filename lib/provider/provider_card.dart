@@ -58,6 +58,7 @@ class ProviderCard extends ChangeNotifier {
       GameCard(type: CardType.gun),
     ];
     resetCards();
+    notifyListeners();
   }
 
   void resetCards() {
