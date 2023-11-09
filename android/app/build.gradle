@@ -50,8 +50,8 @@ android {
         applicationId "com.gameJam.bold"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        versionCode 2
+        versionName "Colors Revolution"
     }
 
     signingConfigs {
