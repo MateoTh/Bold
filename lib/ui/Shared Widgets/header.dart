@@ -1,4 +1,3 @@
-import 'package:bold/model/game.dart';
 import 'package:bold/provider/provider_card.dart';
 import 'package:bold/provider/provider_game_phase.dart';
 import 'package:bold/ui/Rules/rule_scaffold.dart';
