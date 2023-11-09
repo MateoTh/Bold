@@ -48,9 +48,7 @@ class _HeaderState extends State<Header> {
                     icon: Icons.refresh,
                     text: "New Game",
                     ontap: () {
-                      context
-                          .read<ProviderGame>()
-                          .setGamePhase(GamePhase.build);
+                      context.read<ProviderGame>().resetGame();
                       context.read<ProviderCard>().resetGame();
                     },
                   ),

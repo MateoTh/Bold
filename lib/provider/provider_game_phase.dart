@@ -18,8 +18,9 @@ class ProviderGame extends ChangeNotifier {
     notifyListeners();
   }
 
-  void looseRound() {
+  void resetGame() {
     _roundWon = false;
+    _gamePhase = GamePhase.build;
     notifyListeners();
   }
 }
