@@ -4,7 +4,7 @@ import 'package:bold/ui/Cards/hand.dart';
 import 'package:bold/ui/Cards/revealed.dart';
 import 'package:bold/ui/Shared%20Widgets/header.dart';
 import 'package:bold/ui/Shared%20Widgets/reset_button.dart';
-import 'package:bold/ui/victory_ui.dart';
+import 'package:bold/ui/Shared%20Widgets/victory_ui.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';

@@ -25,4 +25,10 @@ List<PlayingCardTheme> PlayingCardThemes = [
     flowerAsset: 'assets/blue_flower.png',
     gunAsset: 'assets/blue_gun.png',
   ),
+  PlayingCardTheme(
+    neutralFlowerAsset: 'assets/neutral_flower.png',
+    flowerAloneAsset: 'assets/purple_flower_alone.png',
+    flowerAsset: 'assets/purple_flower.png',
+    gunAsset: 'assets/purple_gun.png',
+  ),
 ];

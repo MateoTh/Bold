@@ -7,12 +7,14 @@ class PlayingCard extends StatelessWidget {
       required this.card,
       required this.size,
       required this.cardIllustration,
-      this.filtre = false});
+      this.filtre = false,
+      this.border = true});
 
   final GameCard card;
   final double size;
   final AssetImage cardIllustration;
   final bool filtre;
+  final bool border;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class PlayingCard extends StatelessWidget {
       width: size,
       height: size,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 0.5),
+        border: border ? Border.all(color: Colors.white, width: 0.5) : null,
         borderRadius: BorderRadius.circular(8),
         image: DecorationImage(
           image: cardIllustration,
