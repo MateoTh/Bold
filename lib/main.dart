@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Bold',
         theme: ThemeData(useMaterial3: true, brightness: Brightness.dark),
         debugShowCheckedModeBanner: false,
         home: const MenuScaffold());

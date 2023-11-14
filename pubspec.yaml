@@ -1,7 +1,7 @@
 name: bold
-description: A new Flutter project.
+description: A game of bluffing and reasoning.
 publish_to: 'none' 
-version: 1.2.0+1
+version: 1.3.0+1
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
