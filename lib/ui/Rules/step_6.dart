@@ -15,15 +15,11 @@ class Step6 extends StatelessWidget {
           image(context,
               context.read<ProviderCard>().selectedPlayingCardTheme.gunAsset),
           const SizedBox(height: 8),
-          rulesText(context,
-              "*After announcing his bet, the following players have only two choices:"),
-          rulesText(context, "Pass or Bid"),
-          rulesText(context,
-              "*If he decides to *Pass*, the player *can no longer intervene during the round"),
-          rulesText(context,
-              "*If he decides to *Bid*, the player must announce a *higher number of flowers"),
-          rulesText(context,
-              "*This continues until all the other players have passed, at which point the last player *must attempt to make his prediction in accordance with the three rules before"),
+          rulesText(context, 'rules.step_6.sentance_1'),
+          rulesText(context, 'rules.step_6.sentance_2'),
+          rulesText(context, 'rules.step_6.sentance_3'),
+          rulesText(context, 'rules.step_6.sentance_4'),
+          rulesText(context, 'rules.step_6.sentance_5'),
         ]);
   }
 }

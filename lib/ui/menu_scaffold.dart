@@ -4,6 +4,7 @@ import 'package:bold/ui/Cards/playing_card.dart';
 import 'package:bold/ui/Rules/rule_scaffold.dart';
 import 'package:bold/ui/game_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:provider/provider.dart';
 
 class MenuScaffold extends StatelessWidget {
@@ -28,10 +29,10 @@ class MenuScaffold extends StatelessWidget {
             //     height: MediaQuery.of(context).size.height * 0.3),
             SizedBox(height: MediaQuery.of(context).size.height * 0.7),
             ElevatedButton(
-              child: const Text(
-                "New Game",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              child: Text(
+                translate('menu.newGame'),
+                style: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
                 Navigator.push(
@@ -41,9 +42,9 @@ class MenuScaffold extends StatelessWidget {
               },
             ),
             TextButton(
-              child: const Text(
-                "Rules",
-                style: TextStyle(color: Colors.white),
+              child: Text(
+                translate('menu.rules'),
+                style: const TextStyle(color: Colors.white),
               ),
               onPressed: () {
                 Navigator.push(

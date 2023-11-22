@@ -6,6 +6,7 @@ import 'package:bold/ui/Rules/step_5.dart';
 import 'package:bold/ui/Rules/step_6.dart';
 import 'package:bold/ui/Rules/step_7.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
 class RuleScaffold extends StatefulWidget {
   const RuleScaffold({Key? key}) : super(key: key);
@@ -31,9 +32,9 @@ class RuleScaffoldState extends State<RuleScaffold> {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Bold Rules',
-          style: TextStyle(fontWeight: FontWeight.bold),
+        title: Text(
+          translate('headers.rules'),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       body: Stack(
@@ -79,8 +80,9 @@ class RuleScaffoldState extends State<RuleScaffold> {
   }
 }
 
-Widget rulesText(BuildContext context, String text) {
-  final List<String> parts = text.split('*');
+Widget rulesText(BuildContext context, String textLocalizationKey) {
+  var translatedText = translate(textLocalizationKey);
+  final List<String> parts = translatedText.split('*');
   return Padding(
     padding: const EdgeInsets.only(bottom: 8),
     child: RichText(

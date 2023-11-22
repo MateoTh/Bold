@@ -2,6 +2,7 @@ import 'package:bold/model/game.dart';
 import 'package:bold/provider/provider_card.dart';
 import 'package:bold/provider/provider_game_phase.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:provider/provider.dart';
 
 class ResetButton extends StatelessWidget {
@@ -16,10 +17,10 @@ class ResetButton extends StatelessWidget {
         child: Column(
           children: [
             ElevatedButton(
-              child: const Text(
-                "New Round",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              child: Text(
+                translate('menu.newRound'),
+                style: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
               onPressed: () {
                 context.read<ProviderGame>().setGamePhase(GamePhase.build);
@@ -29,18 +30,18 @@ class ResetButton extends StatelessWidget {
             Row(
               children: [
                 TextButton(
-                  child: const Text(
-                    "Win Round",
-                    style: TextStyle(color: Colors.white),
+                  child: Text(
+                    translate('menu.win'),
+                    style: const TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
                     context.read<ProviderGame>().winRound();
                   },
                 ),
                 TextButton(
-                  child: const Text(
-                    "Delete Card",
-                    style: TextStyle(color: Colors.white),
+                  child: Text(
+                    translate('menu.delete'),
+                    style: const TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
                     context.read<ProviderCard>().deleteCard();

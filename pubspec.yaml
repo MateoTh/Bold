@@ -12,6 +12,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.5
   flutter_native_splash: ^2.3.5
+  flutter_translate: ^4.0.4
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -22,6 +25,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/i18n/
 
 flutter_native_splash:
   color: "#000000"

@@ -1,0 +1,79 @@
+{
+    "headers":
+    {
+        "rules":"Bold Rules",
+        "settings":"Bold Settings"
+    },
+    "menu":
+    {
+        "rules":"Rules",
+        "settings":"Settings",
+        "delete":"Delete Card",
+        "newGame":"New Game",
+        "newRound":"NouvelleManche",
+        "win":"Win Round"
+    },
+    "languages":
+    {
+        "fr":"French",
+        "en":"English"
+    },
+    "rules": 
+    {
+        "step_1": 
+        {
+            "sentance_1": "Bold *is a game of bluffing and reasoning",
+            "sentance_2": "*There is no required number of players, but it is preferable to be between* 4 and 6",
+            "sentance_3": "*Each player needs a *phone with the application installed"
+        },
+        "step_2": 
+        {
+            "sentance_1": "3 Flowers",
+            "sentance_2": "1 Gun",
+            "sentance_3": "*Each player has *4 cards* on his hand",
+            "sentance_4": "*When the game starts, each player *chooses a card to play by clicking it"
+        
+        },
+        "step_3": 
+        {
+            "sentance_1": "Face Up",
+            "sentance_2": "Face Down",
+            "sentance_3": "*After selecting a card, the player *drags down on the card* to turn it over",
+            "sentance_4": "*Everyone then *places their telephone on the table*, card face down, and the game can begin"
+        },
+        "step_4": 
+        {
+            "sentance_1": "*The most beautiful player starts",
+            "sentance_2": "*In his turn, each player can do one of the following:",
+            "sentance_3": "Add or Bet",
+            "sentance_4": "*If he decides to *add*, the player *takes back his phone*, pulls up his card to get back to his hand and chooses which of his remaining cards he will place *on top of the first one.",
+            "sentance_5": "*After choosing a new card, he pulls them down again *to turn them over*, and places the phone back on the table for all to see.",
+            "sentance_6": "*Now it's the turn of the next player."
+        },
+        "step_5": 
+        {
+            "sentance_1": "*If the player decides to bet, he must announce *how many flowers* he is able to find from *all the players'cards.",
+            "sentance_2": "*To achieve his forecast, he must follow these three rules :",
+            "sentance_3": "1. The player must first reveal all his cards before turning over those of others",
+            "sentance_4": "2. After turning over his cards, he can turn over those of others in any order",
+            "sentance_5": "3. If a player turns over a pistol before finding the number of flowers announced, he lost"
+        },
+        "step_6": 
+        {
+            "sentance_1": "*After announcing his bet, the following players have only two choices:",
+            "sentance_2": "Pass or Bid",
+            "sentance_3": "*If he decides to *Pass*, the player *can no longer intervene during the round",
+            "sentance_4": "*If he decides to *Bid*, the player must announce a *higher number of flowers",
+            "sentance_5": "*This continues until all the other players have passed, at which point the last player *must attempt to make his prediction in accordance with the three rules before"
+        },
+        "step_7": 
+        {
+            "sentance_1": "*If the player *misses his prediction*, he is penalized by *randomly losing one of his cards*",
+            "sentance_2": "*He must click on the *'Delete Card'* menu button and continue the game with this disadvantage",
+            "sentance_3": "*If the player has *made his prediction* with success, he *scores a point* and must click on the *'Win Round'* menu button",
+            "sentance_4": "*All others click on the *'Reset Cards'* menu button to *recover* their cards",
+            "sentance_5": "*Each player then *chooses the first card he want's to play*, and the next round begins",
+            "sentance_6": "*The first player to *score two points wins* the game"
+        }
+    }
+}

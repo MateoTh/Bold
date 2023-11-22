@@ -4,6 +4,7 @@ import 'package:bold/ui/Rules/rule_scaffold.dart';
 import 'package:bold/ui/Settings/settings_scaffold.dart';
 import 'package:bold/ui/Shared%20Widgets/menu_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:provider/provider.dart';
 
 class Header extends StatefulWidget {
@@ -45,7 +46,7 @@ class _HeaderState extends State<Header> {
                 children: [
                   MenuButton(
                     icon: Icons.refresh,
-                    text: "New Game",
+                    text: translate('menu.newGame'),
                     ontap: () {
                       context.read<ProviderGame>().resetGame();
                       context.read<ProviderCard>().resetGame();
@@ -53,7 +54,7 @@ class _HeaderState extends State<Header> {
                   ),
                   MenuButton(
                     icon: Icons.menu_book,
-                    text: "Rules",
+                    text: translate('menu.rules'),
                     ontap: () {
                       Navigator.push(
                         context,
@@ -64,7 +65,7 @@ class _HeaderState extends State<Header> {
                   ),
                   MenuButton(
                     icon: Icons.settings,
-                    text: "Settings",
+                    text: translate('menu.settings'),
                     ontap: () {
                       Navigator.push(
                         context,

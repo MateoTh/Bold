@@ -24,7 +24,7 @@ class Step2 extends StatelessWidget {
                         .selectedPlayingCardTheme
                         .flowerAsset,
                     size: MediaQuery.of(context).size.width * 0.4),
-                rulesText(context, "3 Flowers"),
+                rulesText(context, 'rules.step_2.sentance_1'),
               ],
             ),
             Column(
@@ -36,15 +36,14 @@ class Step2 extends StatelessWidget {
                         .selectedPlayingCardTheme
                         .gunAsset,
                     size: MediaQuery.of(context).size.width * 0.4),
-                rulesText(context, "1 Gun"),
+                rulesText(context, 'rules.step_2.sentance_2'),
               ],
             ),
           ],
         ),
         const SizedBox(height: 8),
-        rulesText(context, "*Each player has *4 cards* on his hand"),
-        rulesText(context,
-            "*When the game starts, each player *chooses a card to play by clicking it"),
+        rulesText(context, 'rules.step_2.sentance_3'),
+        rulesText(context, 'rules.step_2.sentance_4'),
       ],
     );
   }

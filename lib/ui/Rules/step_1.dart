@@ -22,13 +22,11 @@ class Step1 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              rulesText(context, "Bold *is a game of bluffing and reasoning"),
+              rulesText(context, 'rules.step_1.sentance_1'),
             ],
           ),
-          rulesText(context,
-              "*There is no required number of players, but it is preferable to be between* 3 and 6"),
-          rulesText(context,
-              "*Each player needs a *phone with the application installed"),
+          rulesText(context, "rules.step_1.sentance_2"),
+          rulesText(context, "rules.step_1.sentance_3"),
         ]);
   }
 }

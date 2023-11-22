@@ -1,0 +1,79 @@
+{
+    "headers":
+    {
+        "rules":"Règles",
+        "settings":"Paramètres"
+    },
+    "menu":
+    {
+        "rules":"Règles",
+        "settings":"Paramètres",
+        "delete":"Perdre une carte",
+        "newGame":"Nouvelle Partie",
+        "newRound":"Nouvelle Manche",
+        "win":"Manche Gagnée"
+    },
+    "languages":
+    {
+        "fr":"Français",
+        "en":"Anglais"
+    },
+    "rules": 
+    {
+        "step_1": 
+        {
+            "sentance_1": "Bold *est un jeu de raisonnement et de bluff",
+            "sentance_2": "*Il n'y a pas de nombre de joueurs obligatoire mais il est préférable de jouer entre *4 et 6",
+            "sentance_3": "*Chaque joueur a besoin de son *téléphone et de l'application installée"
+        },
+        "step_2": 
+        {
+            "sentance_1": "3 Fleurs",
+            "sentance_2": "1 Pistolet",
+            "sentance_3": "*Chaque joueur a *4 cartes* dans sa main",
+            "sentance_4": "*Quand la partie commence, chaque joueur *choisis une carte à jouer en cliquant dessus"
+        
+        },
+        "step_3": 
+        {
+            "sentance_1": "Face recto",
+            "sentance_2": "Face Verso",
+            "sentance_3": "*Après avoir choisis une carte, le joueur *tire vers le bas* pour la masquer",
+            "sentance_4": "*Chacun *place ensuite son téléphone sur la table*, carte face verso, et la partie peut commencer"
+        },
+        "step_4": 
+        {
+            "sentance_1": "*Le plus beau joueur commence",
+            "sentance_2": "*À son tour, chaque joueur peut réaliser l'une de ces deux actions:",
+            "sentance_3": "Ajouter or Parier",
+            "sentance_4": "*S'il décide d'*Ajouter*, le joueur *reprend son téléphone*, tire vers le haut sa carte pour afficher sa main et choisis une carte à ajouter sur le première.",
+            "sentance_5": "*Après avoir choisis une nouvelle carte, il tire ver le bas *pour retourner ses cartes*, et replace son téléphone sur la table, visible par tous.",
+            "sentance_6": "*C'est maintenant le tour du joueur suivant."
+        },
+        "step_5": 
+        {
+            "sentance_1": "*Si le joueur décide de *Parier*, il doit annoncer *combien de fleurs* il est capable de trouver d'affilé parmis *les cartes de tous les joueurs.",
+            "sentance_2": "*Pour réaliser sa prédiction, il doit respecter ces trois règles :",
+            "sentance_3": "1. Le jeour doit d'abord découvrir *toutes ses cartes* avant de retourner celles des autres",
+            "sentance_4": "2. *Après avoir retourné les siennes, il peut retourner celles des autres *dans l'ordre qu'il veut*.",
+            "sentance_5": "3. *Si le joueur retourne un pistolet avant d'avoir trouvé le nombre de fleurs annoncées, il a perdu"
+        },
+        "step_6": 
+        {
+            "sentance_1": "*Après avoir annoncé son pari, les joueurs suivants ont deux choix :",
+            "sentance_2": "Passer or Surenchérir",
+            "sentance_3": "*S'il décide de *Passer*, le joueur *ne pourra plus intervenir durant la manche",
+            "sentance_4": "*S'il décide de *Bid*, le joueur doit annoncer pouvoir trouver un *plus grand nombre de fleurs",
+            "sentance_5": "*Cette phase continue jusqu'a ce qu'un seul joueur n'ait pas passé, ce dernier doit alors *tenter de réaliser sa prédiction en respectant les trois règles vues précédemment"
+        },
+        "step_7": 
+        {
+            "sentance_1": "*Si le joueur *ne réalise pas sa prédiction*, il est pénalisé en *perdant définitivement l'une de ses cartes au hasard*",
+            "sentance_2": "*Il doit cliquer sur le bouton *'Perdre une carte'* et continuer la partie avec ce désaventage",
+            "sentance_3": "*Si le joueur a *réalisé sa prédiction*, il *marque un point* et doit cliquer sur le bouton *'Manche Gagnée'",
+            "sentance_4": "*All others click on the *'Reset cartes'* menu button to *recover* their cartes",
+            "sentance_5": "*La prochaine manche peut commencer, chaque joueur choisis une nouvelle première carte",
+            "sentance_6": "*Le premier joueur a *marquer deux points gagne* la partie"
+        }
+    }
+}

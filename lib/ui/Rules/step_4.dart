@@ -19,15 +19,12 @@ class Step4 extends StatelessWidget {
                   .selectedPlayingCardTheme
                   .neutralFlowerAsset),
           const SizedBox(height: 8),
-          rulesText(context, "*The most beautiful player starts"),
-          rulesText(context,
-              "*In his turn, each player can do one of the following:"),
-          rulesText(context, "Add or Bet"),
-          rulesText(context,
-              "*If he decides to *add*, the player *takes back his phone*, pulls up his card to get back to his hand and chooses which of his remaining cards he will place *on top of the first one."),
-          rulesText(context,
-              "*After choosing a new card, he pulls them down again *to turn them over*, and places the phone back on the table for all to see."),
-          rulesText(context, "*Now it's the turn of the next player."),
+          rulesText(context, 'rules.step_4.sentance_1'),
+          rulesText(context, 'rules.step_4.sentance_2'),
+          rulesText(context, 'rules.step_4.sentance_3'),
+          rulesText(context, 'rules.step_4.sentance_4'),
+          rulesText(context, 'rules.step_4.sentance_5'),
+          rulesText(context, 'rules.step_4.sentance_6'),
         ]);
   }
 }

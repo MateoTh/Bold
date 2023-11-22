@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:bold/model/cardTheme.dart';
 import 'package:bold/provider/provider_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:provider/provider.dart';
 
 class SettingsScaffold extends StatelessWidget {
@@ -12,17 +13,46 @@ class SettingsScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Bold Settings',
-          style: TextStyle(fontWeight: FontWeight.bold),
+        title: Text(
+          translate('headers.settings'),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: PlayingCardThemes.map((theme) {
-            return coupleImage(context, theme);
-          }).toList(),
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ElevatedButton(
+                  child: Text(
+                    translate('languages.fr'),
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  onPressed: () {
+                    changeLocale(context, 'fr');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text(
+                    translate('languages.en'),
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  onPressed: () {
+                    changeLocale(context, 'en_US');
+                  },
+                ),
+              ],
+            ),
+            Column(
+              children: PlayingCardThemes.map((theme) {
+                return coupleImage(context, theme);
+              }).toList(),
+            ),
+          ],
         ),
       ),
     );

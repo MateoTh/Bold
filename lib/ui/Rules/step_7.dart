@@ -19,18 +19,12 @@ class Step7 extends StatelessWidget {
                   .selectedPlayingCardTheme
                   .neutralFlowerAsset),
           const SizedBox(height: 8),
-          rulesText(context,
-              "*If the player *misses his prediction*, he is penalized by *randomly losing one of his cards*"),
-          rulesText(context,
-              "*He must click on the *'Delete Card'* menu button and continue the game with this disadvantage"),
-          rulesText(context,
-              "*If the player has *made his prediction* with success, he *scores a point* and must click on the *'Win Round'* menu button"),
-          rulesText(context,
-              "*All others click on the *'Reset Cards'* menu button to *recover* their cards"),
-          rulesText(context,
-              "*Each player then *chooses the first card he want's to play*, and the next round begins"),
-          rulesText(
-              context, "*The first player to *score two points wins* the game"),
+          rulesText(context, 'rules.step_7.sentance_1'),
+          rulesText(context, 'rules.step_7.sentance_2'),
+          rulesText(context, 'rules.step_7.sentance_3'),
+          rulesText(context, 'rules.step_7.sentance_4'),
+          rulesText(context, 'rules.step_7.sentance_5'),
+          rulesText(context, 'rules.step_7.sentance_6'),
         ]);
   }
 }
