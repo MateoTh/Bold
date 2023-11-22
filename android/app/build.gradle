@@ -50,7 +50,7 @@ android {
         applicationId "com.gameJam.bold"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
-        versionCode 3
+        versionCode 4
         versionName "Colors Revolution"
     }
 
