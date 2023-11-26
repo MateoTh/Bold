@@ -11,6 +11,7 @@ class MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.translucent,
       onTap: () => ontap(),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
