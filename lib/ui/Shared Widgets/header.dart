@@ -37,44 +37,60 @@ class _HeaderState extends State<Header> {
             maintainAnimation: true,
             maintainState: true,
             visible: display,
-            child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.fastOutSlowIn,
-              opacity: display ? 1 : 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  MenuButton(
-                    icon: Icons.refresh,
-                    text: translate('menu.newGame'),
-                    ontap: () {
-                      context.read<ProviderGame>().resetGame();
-                      context.read<ProviderCard>().resetGame();
-                    },
-                  ),
-                  MenuButton(
-                    icon: Icons.menu_book,
-                    text: translate('menu.rules'),
-                    ontap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RuleScaffold()),
-                      );
-                    },
-                  ),
-                  MenuButton(
-                    icon: Icons.settings,
-                    text: translate('menu.settings'),
-                    ontap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SettingsScaffold()),
-                      );
-                    },
-                  ),
-                ],
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white.withOpacity(0.1),
+              ),
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.fastOutSlowIn,
+                opacity: display ? 1 : 0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    MenuButton(
+                      icon: Icons.refresh,
+                      text: translate('menu.newGame'),
+                      ontap: () {
+                        setState(() {
+                          display = false;
+                        });
+                        context.read<ProviderGame>().resetGame();
+                        context.read<ProviderCard>().resetGame();
+                      },
+                    ),
+                    MenuButton(
+                      icon: Icons.menu_book,
+                      text: translate('menu.rules'),
+                      ontap: () {
+                        setState(() {
+                          display = false;
+                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const RuleScaffold()),
+                        );
+                      },
+                    ),
+                    MenuButton(
+                      icon: Icons.settings,
+                      text: translate('menu.settings'),
+                      ontap: () {
+                        setState(() {
+                          display = false;
+                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SettingsScaffold()),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           )

@@ -16,12 +16,20 @@ class MenuButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-          Text(
-            text,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+          Visibility(
+            visible: text != "",
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Text(
+                text,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
-          const SizedBox(width: 8),
-          Icon(icon),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: Icon(icon),
+          ),
         ]),
       ),
     );
